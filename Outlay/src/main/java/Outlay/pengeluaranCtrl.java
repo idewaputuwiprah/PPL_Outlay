@@ -22,8 +22,8 @@ public class PengeluaranCtrl {
     
     private DB dbhandler = new DB();
     
-    public void submitOnClick(HalamanUtama _halUt) {
-        HalamanUtama halaman_utama = _halUt;
+    public void submitOnClick(HalamanMencatat _halUt) {
+        HalamanMencatat halaman_utama = _halUt;
         String nama = null;
         nama = halaman_utama.getName();
         String nominal_temp = null; 
