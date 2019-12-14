@@ -5,23 +5,36 @@
  */
 package Outlay;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+import Outlay.PengeluaranCtrl;
+import Outlay.DB;
+
 /**
  *
  * @author idewa
  */
-public class pengeluaranCtrl {
+public class PengeluaranCtrl {
     
-    public pengeluaranCtrl(){
+    public PengeluaranCtrl(){
         
     }
     
-    public void submitOnClick() {
-        String nama = halaman_utama.getName();
-        String nominal = halaman_utama.getNumber();
-        dbhandler.init();
-        dbhandler.submitPengeluaran(nama, nominal);
-    }
+    private DB dbhandler = new DB();
     
-    private DB dbhandler;
-    private FormPengeluaran halaman_utama;
+    public void submitOnClick(HalamanMencatat _halUt) {
+        HalamanMencatat halaman_utama = _halUt;
+        String nama = null;
+        nama = halaman_utama.getName();
+        String nominal_temp = null; 
+        nominal_temp = halaman_utama.getNumber();
+        Integer nominal = Integer.parseInt(nominal_temp);
+        System.out.println(nama);
+        System.out.println(nominal);
+//        Integer nominal = Integer.valueOf(nominal_temp);
+//        JOptionPane.showMessageDialog(null,"berhasil koneksi");
+        Connection connection = dbhandler.init();
+        dbhandler.submitPengeluaran(nama, nominal, connection);
+    }
+
 }
