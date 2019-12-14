@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package Outlay;
-
+import Outlay.PageCtrl;
 /**
  *
- * @author idewa
+ * @author Akmal
  */
 public class HalamanUtama extends javax.swing.JFrame {
 
@@ -16,9 +16,12 @@ public class HalamanUtama extends javax.swing.JFrame {
      */
     public HalamanUtama() {
         initComponents();
+        jPanel1.setSize(0, 400);
+        jLabel2.setSize(0, 0);
     }
     
-    String s = "";
+    private PageCtrl PC = new PageCtrl();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,255 +31,139 @@ public class HalamanUtama extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        number_5 = new javax.swing.JButton();
-        number_6 = new javax.swing.JButton();
-        number_7 = new javax.swing.JButton();
-        number_8 = new javax.swing.JButton();
-        number_9 = new javax.swing.JButton();
-        number_0 = new javax.swing.JButton();
-        number_1 = new javax.swing.JButton();
-        number_2 = new javax.swing.JButton();
-        number_3 = new javax.swing.JButton();
-        number_4 = new javax.swing.JButton();
-        numberField = new java.awt.TextField();
-        submitButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        namaPengeluaran = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 400));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        number_5.setText("5");
-        number_5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_5MouseClicked(evt);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel1MousePressed(evt);
+            }
+        });
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 50, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 50, 40);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("OUTLAY");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(160, 30, 90, 29);
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(0));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
             }
         });
 
-        number_6.setText("6");
-        number_6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_6MouseClicked(evt);
+        jButton1.setText("Kategori Pengeluaran");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
             }
         });
 
-        number_7.setText("7");
-        number_7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_7MouseClicked(evt);
-            }
-        });
-
-        number_8.setText("8");
-        number_8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_8MouseClicked(evt);
-            }
-        });
-
-        number_9.setText("9");
-        number_9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_9MouseClicked(evt);
-            }
-        });
-
-        number_0.setText("0");
-        number_0.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_0MouseClicked(evt);
-            }
-        });
-
-        number_1.setText("1");
-        number_1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_1MouseClicked(evt);
-            }
-        });
-
-        number_2.setText("2");
-        number_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_2MouseClicked(evt);
-            }
-        });
-
-        number_3.setText("3");
-        number_3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_3MouseClicked(evt);
-            }
-        });
-
-        number_4.setText("4");
-        number_4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                number_4MouseClicked(evt);
-            }
-        });
-
-        numberField.setText("textField2");
-        numberField.setEditable(false);
-
-        submitButton.setText("Submit");
-        submitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                submitButtonMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setText("Pengeluaran");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(namaPengeluaran))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(number_4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number_5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(number_6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(number_7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(number_0)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(number_8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(number_9))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(number_1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(number_2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(number_3))))
-                        .addGap(0, 119, Short.MAX_VALUE)))
-                .addGap(39, 39, 39))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitButton)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(namaPengeluaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(number_1)
-                    .addComponent(number_2)
-                    .addComponent(number_3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(number_4)
-                    .addComponent(number_5)
-                    .addComponent(number_6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(number_7)
-                    .addComponent(number_8)
-                    .addComponent(number_9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(number_0)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(submitButton)
-                .addContainerGap())
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(198, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 150, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void number_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_1MouseClicked
+    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         // TODO add your handling code here:
-        s = s + "1";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_1MouseClicked
+        Thread th;
+        th = new Thread(){
+            @Override
+            public void run(){
+                try{
+                    for(int a=0;a<=6;a++){
+                        Thread.sleep(50);
+                            if(a==1){
+                               jPanel1.setSize(25, 400);
+                               jLabel1.setSize(0, 0);
+                               jLabel2.setSize(50, 40);
+                            }
+                            if(a==2)jPanel1.setSize(50, 400);
+                            if(a==3)jPanel1.setSize(75, 400);
+                            if(a==4)jPanel1.setSize(100, 400);
+                            if(a==5)jPanel1.setSize(125, 400);
+                            if(a==6)jPanel1.setSize(150, 400);
+                            
+                    
+                    }
+                }
+                catch(Exception ex){
+                    System.out.println(ex);
+                }
+            }
+        };
+        th.start();
+    }//GEN-LAST:event_jLabel1MousePressed
 
-    private void number_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_2MouseClicked
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
         // TODO add your handling code here:
-        s = s + "2";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_2MouseClicked
+        Thread th;
+        th = new Thread(){
+            @Override
+            public void run(){
+                try{
+                    for(int a=0;a<=6;a++){
+                        Thread.sleep(50);
+                            if(a==1){
+                               jPanel1.setSize(125, 400);
+                               jLabel2.setSize(0, 0);
+                            }
+                            if(a==2)jPanel1.setSize(100, 400);
+                            if(a==3)jPanel1.setSize(75, 400);
+                            if(a==4)jPanel1.setSize(50, 400);
+                            if(a==5)jPanel1.setSize(25, 400);
+                            if(a==6){
+                                jPanel1.setSize(0, 400);
+                                jLabel1.setSize(50, 40);
+                            }
+                            
+                    
+                    }
+                }
+                catch(Exception ex){
+                    System.out.println(ex);
+                }
+            }
+        };
+        th.start();
+    }//GEN-LAST:event_jPanel1MousePressed
 
-    private void number_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_3MouseClicked
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
-        s = s + "3";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_3MouseClicked
+        PC.bukaHalamanKategori(this);
+    }//GEN-LAST:event_jButton1MousePressed
 
-    private void number_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_4MouseClicked
-        // TODO add your handling code here:
-        s = s + "4";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_4MouseClicked
-
-    private void number_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_5MouseClicked
-        // TODO add your handling code here:
-        s = s + "5";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_5MouseClicked
-
-    private void number_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_6MouseClicked
-        // TODO add your handling code here:
-        s = s + "6";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_6MouseClicked
-
-    private void number_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_7MouseClicked
-        // TODO add your handling code here:
-        s = s + "7";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_7MouseClicked
-
-    private void number_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_8MouseClicked
-        // TODO add your handling code here:
-        s = s + "8";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_8MouseClicked
-
-    private void number_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_9MouseClicked
-        // TODO add your handling code here:
-        s = s + "9";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_9MouseClicked
-
-    private void number_0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_number_0MouseClicked
-        // TODO add your handling code here:
-        s = s + "0";
-        numberField.setText(s);
-    }//GEN-LAST:event_number_0MouseClicked
-
-    private void submitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseClicked
-        // TODO add your handling code here:
-        pengeluaranctrl.submitOnClick();
-    }//GEN-LAST:event_submitButtonMouseClicked
-
-    public String getNumber(){
-        return numberField.getText();
-    }
-    
-    public String getName(){
-        return namaPengeluaran.getText();
-    }
-    
     /**
      * @param args the command line arguments
      */
@@ -303,9 +190,6 @@ public class HalamanUtama extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(HalamanUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -314,23 +198,12 @@ public class HalamanUtama extends javax.swing.JFrame {
             }
         });
     }
-    
-    private pengeluaranCtrl pengeluaranctrl;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField namaPengeluaran;
-    private java.awt.TextField numberField;
-    private javax.swing.JButton number_0;
-    private javax.swing.JButton number_1;
-    private javax.swing.JButton number_2;
-    private javax.swing.JButton number_3;
-    private javax.swing.JButton number_4;
-    private javax.swing.JButton number_5;
-    private javax.swing.JButton number_6;
-    private javax.swing.JButton number_7;
-    private javax.swing.JButton number_8;
-    private javax.swing.JButton number_9;
-    private javax.swing.JButton submitButton;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

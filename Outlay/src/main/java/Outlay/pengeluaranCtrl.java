@@ -23,5 +23,5 @@ public class pengeluaranCtrl {
     }
     
     private DB dbhandler;
-    private HalamanUtama halaman_utama;
+    private FormPengeluaran halaman_utama;
 }
