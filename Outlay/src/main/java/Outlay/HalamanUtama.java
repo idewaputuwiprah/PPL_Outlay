@@ -5,6 +5,9 @@
  */
 package Outlay;
 
+import Outlay.PengeluaranCtrl;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author idewa
@@ -17,6 +20,8 @@ public class HalamanUtama extends javax.swing.JFrame {
     public HalamanUtama() {
         initComponents();
     }
+    
+    private final PengeluaranCtrl pengeluaranctrl = new PengeluaranCtrl();
     
     String s = "";
     /**
@@ -39,9 +44,9 @@ public class HalamanUtama extends javax.swing.JFrame {
         number_3 = new javax.swing.JButton();
         number_4 = new javax.swing.JButton();
         numberField = new java.awt.TextField();
-        submitButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         namaPengeluaran = new javax.swing.JTextField();
+        submitButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,17 +120,16 @@ public class HalamanUtama extends javax.swing.JFrame {
             }
         });
 
-        numberField.setText("textField2");
         numberField.setEditable(false);
 
-        submitButton.setText("Submit");
-        submitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                submitButtonMouseClicked(evt);
+        jLabel1.setText("Pengeluaran");
+
+        submitButton1.setText("Submit");
+        submitButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButton1ActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("Pengeluaran");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,7 +171,7 @@ public class HalamanUtama extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitButton)
+                .addComponent(submitButton1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -197,7 +201,7 @@ public class HalamanUtama extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(number_0)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(submitButton)
+                .addComponent(submitButton1)
                 .addContainerGap())
         );
 
@@ -264,10 +268,10 @@ public class HalamanUtama extends javax.swing.JFrame {
         numberField.setText(s);
     }//GEN-LAST:event_number_0MouseClicked
 
-    private void submitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitButtonMouseClicked
+    private void submitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButton1ActionPerformed
         // TODO add your handling code here:
-        pengeluaranctrl.submitOnClick();
-    }//GEN-LAST:event_submitButtonMouseClicked
+        pengeluaranctrl.submitOnClick(this);
+    }//GEN-LAST:event_submitButton1ActionPerformed
 
     public String getNumber(){
         return numberField.getText();
@@ -314,13 +318,11 @@ public class HalamanUtama extends javax.swing.JFrame {
             }
         });
     }
-    
-    private pengeluaranCtrl pengeluaranctrl;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField namaPengeluaran;
-    private java.awt.TextField numberField;
+    public static javax.swing.JTextField namaPengeluaran;
+    public static java.awt.TextField numberField;
     private javax.swing.JButton number_0;
     private javax.swing.JButton number_1;
     private javax.swing.JButton number_2;
@@ -331,6 +333,6 @@ public class HalamanUtama extends javax.swing.JFrame {
     private javax.swing.JButton number_7;
     private javax.swing.JButton number_8;
     private javax.swing.JButton number_9;
-    private javax.swing.JButton submitButton;
+    private javax.swing.JButton submitButton1;
     // End of variables declaration//GEN-END:variables
 }
