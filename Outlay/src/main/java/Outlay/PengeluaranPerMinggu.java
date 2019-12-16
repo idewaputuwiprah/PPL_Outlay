@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author asus
+ * @author yasinta
  */
 public class PengeluaranPerMinggu extends javax.swing.JFrame {
 

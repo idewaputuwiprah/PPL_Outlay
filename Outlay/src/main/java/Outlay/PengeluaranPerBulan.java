@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author asus
+ * @author yasinta
  */
 public class PengeluaranPerBulan extends javax.swing.JFrame {
 

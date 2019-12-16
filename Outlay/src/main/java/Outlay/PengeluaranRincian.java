@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author asus
+ * @author yasinta
  */
 public class PengeluaranRincian extends javax.swing.JFrame {
 
