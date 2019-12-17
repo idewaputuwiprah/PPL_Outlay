@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import Outlay.PengeluaranCtrl;
+import java.time.LocalDate;
 
 /**
  *
@@ -212,5 +213,37 @@ public class DB {
             
             }        
         }
-    }    
+    }  
+    
+    public ResultSet getTotal(String waktu,Connection conn){
+        
+        ResultSet hasil = null;
+        try{
+            Statement st = conn.createStatement();
+            String q = null;
+            if(waktu == "hari")
+            {
+                q = "select * from pengeluaran where tanggal = '"+LocalDate.now()+"';";
+            }
+            else if(waktu == "minggu")
+            {
+                LocalDate tanggal = LocalDate.now();
+                q = "select idPengeluaran,tanggal,SUM(nominal) as nominal from pengeluaran where tanggal > '"+tanggal.minusDays(7)+"' AND tanggal <= '"+tanggal+"' GROUP BY tanggal;";
+            }
+            else if(waktu == "bulan")
+            {
+                LocalDate tanggal = LocalDate.now();
+                q = "select idPengeluaran,tanggal,SUM(nominal) as nominal from pengeluaran where tanggal > '"+tanggal.minusDays(30)+"' AND tanggal <= '"+tanggal+"' GROUP BY tanggal;";
+            }
+            if(waktu == "seluruh")
+            {
+                q = "select * from pengeluaran order by tanggal desc;";
+            }
+            hasil = st.executeQuery(q);
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return hasil;
+    } 
 }
