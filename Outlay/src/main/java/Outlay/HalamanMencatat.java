@@ -7,6 +7,7 @@ package Outlay;
 
 import Outlay.PengeluaranCtrl;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 /**
  *
@@ -19,6 +20,7 @@ public class HalamanMencatat extends javax.swing.JFrame {
      */
     public HalamanMencatat() {
         initComponents();
+        getComboKategori();
     }
     
     private final PengeluaranCtrl pengeluaranctrl = new PengeluaranCtrl();
@@ -47,6 +49,7 @@ public class HalamanMencatat extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         namaPengeluaran = new javax.swing.JTextField();
         submitButton1 = new javax.swing.JButton();
+        kategori_ComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,6 +134,8 @@ public class HalamanMencatat extends javax.swing.JFrame {
             }
         });
 
+        kategori_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,7 +172,8 @@ public class HalamanMencatat extends javax.swing.JFrame {
                                     .addComponent(number_2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(number_3))))
-                        .addGap(0, 119, Short.MAX_VALUE)))
+                        .addGap(42, 42, 42)
+                        .addComponent(kategori_ComboBox, 0, 77, Short.MAX_VALUE)))
                 .addGap(39, 39, 39))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -182,7 +188,9 @@ public class HalamanMencatat extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(namaPengeluaran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kategori_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(number_1)
@@ -273,12 +281,34 @@ public class HalamanMencatat extends javax.swing.JFrame {
         pengeluaranctrl.submitOnClick(this);
     }//GEN-LAST:event_submitButton1ActionPerformed
 
+    private void getComboKategori(){
+        Connection con = pengeluaranctrl.getKategori_List();
+        try{
+            Statement st = con.createStatement();
+            String q = "select * from kategori";
+            ResultSet rs = st.executeQuery(q);
+            
+            while(rs.next()){
+                String kategori = (String) rs.getString("nama");
+                kategori_ComboBox.addItem(kategori);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
     public String getNumber(){
         return numberField.getText();
     }
     
     public String getName(){
         return namaPengeluaran.getText();
+    }
+    
+    public String getKat(){
+        String value = (String) kategori_ComboBox.getSelectedItem();
+        return value;
     }
     
     /**
@@ -325,6 +355,7 @@ public class HalamanMencatat extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> kategori_ComboBox;
     public static javax.swing.JTextField namaPengeluaran;
     public static java.awt.TextField numberField;
     private javax.swing.JButton number_0;

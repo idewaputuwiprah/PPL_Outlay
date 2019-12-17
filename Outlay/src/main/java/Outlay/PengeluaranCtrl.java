@@ -7,7 +7,6 @@ package Outlay;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-import Outlay.PengeluaranCtrl;
 import Outlay.DB;
 
 /**
@@ -25,16 +24,22 @@ public class PengeluaranCtrl {
     public void submitOnClick(HalamanMencatat _halUt) {
         HalamanMencatat halaman_utama = _halUt;
         String nama = null;
-        nama = halaman_utama.getName();
         String nominal_temp = null; 
+        String value = null;
+        nama = halaman_utama.getName();
         nominal_temp = halaman_utama.getNumber();
+        value = halaman_utama.getKat();
         Integer nominal = Integer.parseInt(nominal_temp);
         System.out.println(nama);
         System.out.println(nominal);
 //        Integer nominal = Integer.valueOf(nominal_temp);
 //        JOptionPane.showMessageDialog(null,"berhasil koneksi");
         Connection connection = dbhandler.init();
-        dbhandler.submitPengeluaran(nama, nominal, connection);
+    }
+    
+    public Connection getKategori_List(){
+        Connection con = dbhandler.init();
+        return con;
     }
 
 }
